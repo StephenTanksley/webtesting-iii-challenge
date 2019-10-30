@@ -5,6 +5,8 @@ import * as rtl from '@testing-library/react'
 import "@testing-library/jest-dom/extend-expect"
 
 import Dashboard from './Dashboard'
+import Display from '../display/Display'
+import Controls from '../controls/Controls'
 
 //this is to keep things nice and clean and flush out the DOM after tests.
 afterEach(rtl.cleanup);
@@ -15,7 +17,15 @@ describe('<Dashboard />', () => {
     it('should match snapshot', () => {
 
         //we target the component we want to test here.
-        const wrapper = rtl.render(<Dashboard />)
+        const wrapper = rtl.render(<Dashboard />);
+
+        // //we want to make sure the Display is rendering.
+        // const display = rtl.render(<Display />);
+        // expect(display).toBeVisible()
+
+        // //we want to make sure the Controls are rendering.
+        // const controls = rtl.render(<Controls />);
+        // expect(controls).toBeVisible()
 
         //we're using the debug function to visualize the element tree in the terminal.
         wrapper.debug()
