@@ -6,7 +6,7 @@ import "@testing-library/jest-dom/extend-expect"
 
 import Dashboard from './Dashboard'
 
-
+//this is to keep things nice and clean and flush out the DOM after tests.
 afterEach(rtl.cleanup);
 
 //testing to make sure the dashboard shows up.
@@ -22,7 +22,6 @@ describe('<Dashboard />', () => {
 
         //we expecting the dashboard to match the saved snapshot.
         expect(wrapper.asFragment()).toMatchSnapshot();
-
 
     });
 });
