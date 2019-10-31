@@ -17,16 +17,19 @@ afterEach(rtl.cleanup);
 //testing to make sure the Controls component shows up.
 describe('<Controls />', () => {
     it('should match snapshot', () => {
-
+        //we render the Controls component and turn that into our snapshot.
         const wrapper = rtl.render(<Controls />)
-        //we're using the debug function to visualize the element tree in the terminal.
-        wrapper.debug()
-
-        //  //need to check to make sure buttons are showing up.
-        //  const button = wrapper.getByRole(button, /close gate/i)
-        //  expect(button).toBeVisible()
-
-         //we expecting the dashboard to match the saved snapshot.
         expect(wrapper.asFragment()).toMatchSnapshot();
+    })
+
+    it('should have buttons rendering', () => {
+        const wrapper = rtl.render(<Controls />)
+        //role in this case is targeting the element tag.
+        const buttons = wrapper.getAllByRole('button')
+        //we can tell that the buttons are rendering if we get two of them back.
+        expect(buttons).toHaveLength(2)
+
+        //I want to see the component rendered.
+        wrapper.debug()
     })
 })
