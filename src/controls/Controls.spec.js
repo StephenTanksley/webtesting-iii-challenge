@@ -19,12 +19,14 @@ describe('<Controls />', () => {
     it('should match snapshot', () => {
 
         const wrapper = rtl.render(<Controls />)
+        //we're using the debug function to visualize the element tree in the terminal.
+        wrapper.debug()
 
-         //we're using the debug function to visualize the element tree in the terminal.
-         wrapper.debug()
+        //  //need to check to make sure buttons are showing up.
+        //  const button = wrapper.getByRole(button, /close gate/i)
+        //  expect(button).toBeVisible()
 
          //we expecting the dashboard to match the saved snapshot.
         expect(wrapper.asFragment()).toMatchSnapshot();
-
     })
 })

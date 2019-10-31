@@ -23,6 +23,9 @@ describe('<Display />', () => {
          //we're using the debug function to visualize the element tree in the terminal.
          wrapper.debug()
 
+         //need to be sure that the displays are showing green and red.
+         
+
          //we expecting the dashboard to match the saved snapshot.
         expect(wrapper.asFragment()).toMatchSnapshot();
 
